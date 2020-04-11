@@ -1,0 +1,33 @@
+prefix: "React tsconfig"
+description: "tsconfig.json with React"
+scope: "json,jsonc"
+body: |
+  {
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "lib": ["es6", "dom"],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "strictNullChecks": true,
+      "strictPropertyInitialization": false,
+      "strict": true,
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["${1}/*"]
+      },
+      "jsx": "react"
+    },
+    "include": [
+      "./${1}/**/*",
+      "./__tests__/**/*",
+      "./scripts/**/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
